@@ -1,0 +1,106 @@
+
+/* 1. Variables Globales (La paleta de Conecta Hogar) */
+:root {
+    --navy: #12141c;
+    --pink: #e83360;
+    --yellow: #f5d318;
+    --sky: #55bcd9;
+
+    --bg-light: #f7f8fa;
+    --card-radius: 0.625rem; /* 10px redondeado, como en el Figma */
+}
+
+/* 2. Estilos base para coherencia visual */
+body {
+    /* Aquí ponemos primero el degradado (con transparencia) 
+       y luego la imagen, separados por una coma.
+    */
+    background: 
+        linear-gradient(135deg, rgba(247, 248, 250, 0.85), rgba(237, 241, 247, 0.85)), 
+        url('FONDOAPP.png');
+    
+    /* Configuraciones para que la imagen se vea bien */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+
+    min-height: 100vh;
+    color: var(--navy);
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Espaciado del contenedor principal */
+main {
+    padding-bottom: 50px;
+}
+
+/* Mejora el botón para que se vea más clicable */
+.btn-primary {
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* 3. Estilo para el Navbar (Coherencia con el index) */
+.navbar {
+    background-color: #ffffff !important;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Mejora el contenedor del navbar para que no esté pegado al borde */
+.navbar .container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navbar-brand {
+    color: var(--pink) !important;
+    font-weight: 900; /* Font-black */
+    font-size: 1.5rem;
+}
+
+.navbar-brand img {
+    height: 80px; /* Prueba subirlo un poco */
+    width: auto;
+}
+
+/* 4. Estilos de Tarjetas (Aquí es donde ocurre la magia) */
+.card {
+    border-radius: var(--card-radius);
+    border: 1px solid rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* Efecto hover al pasar el mouse (para que se sienta interactivo) */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 5. Personalización de elementos */
+.btn-primary {
+    background-color: var(--pink);
+    border: none;
+    border-radius: var(--card-radius);
+    font-weight: 700;
+}
+
+.btn-primary:hover {
+    background-color: #d42850; /* Un tono un poco más oscuro para el hover */
+}
+
+.btn-primary:active {
+    transform: scale(0.98); /* Un pequeño efecto de "hundido" al hacer clic */
+}
+
+/* Mejora el espaciado de la sección Hero */
+.py-5 {
+    padding-top: 4rem !important;
+    padding-bottom: 3rem !important;
+}
+
