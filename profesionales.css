@@ -1,8 +1,5 @@
-/* ============================================
-     TOKENS DE MARCA — Conecta Hogar
-     Ajusta estos valores si tienes los HEX exactos
-     de tu manual de marca.
-  ============================================ */
+/* Tokens de marca— Conecta Hogar */
+
   :root{
     --navy: #0B1224;
     --teal: #0A6880;
@@ -40,9 +37,8 @@
     font-family:'Poppins', sans-serif;
   }
 
-  /* ============================================
-     HEADER
-  ============================================ */
+
+/* Header */
   .site-header{
     position:sticky;
     top:0;
@@ -185,9 +181,7 @@
     opacity:.8;
   }
 
-  /* ============================================
-     SECCIONES POR ESPECIALIDAD
-  ============================================ */
+/* Secciones de especialidad */
   .specialty-section{
     max-width:1180px;
     margin:0 auto;
@@ -223,9 +217,7 @@
     gap:20px;
   }
 
-  /* ============================================
-     TARJETA
-  ============================================ */
+  /* Tarjetas */
   .card{
     background:var(--surface);
     border-radius:var(--radius);
@@ -367,9 +359,8 @@
     font-size:15px;
   }
 
-  /* ============================================
-     MODAL DE CONTACTO
-  ============================================ */
+ /* Modal(ventana emergente) de contacto */
+
   .modal-overlay{
     position:fixed; inset:0;
     background:rgba(22,40,74,0.45);
@@ -454,12 +445,9 @@
     font-size:13px;
   }
 
-  /* ============================================
-     RESPONSIVE
-  ============================================ */
+  /* Responsive */
 
-  /* Tablet: el menú de navegación central se oculta
-     (evita que se encime); se mantiene logo + Ingresar + CTA */
+  /* Tablet o celular: el menú de navegación central se oculta (evita que se encime); se mantiene logo + Ingresar + CTA */
   @media (max-width:960px){
     .nav-links{display:none;}
     .header-inner{gap:14px;}
