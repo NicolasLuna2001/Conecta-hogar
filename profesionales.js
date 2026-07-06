@@ -1,9 +1,5 @@
-/* ============================================
-   DATOS DE EJEMPLO
-   Reemplaza este arreglo con la respuesta de tu
-   API/backend real (fetch a tu endpoint de
-   profesionales).
-============================================ */
+// Datos base del sistema (especialidades, nombres y certificaciones).
+
 const especialidades = [
   { key:"gasfiteria",   nombre:"Gasfitería",   color:"var(--turquoise)" },
   { key:"electricidad", nombre:"Electricidad", color:"var(--yellow)" },
@@ -25,12 +21,13 @@ const CERTIFICACIONES = {
   pintura: ["Maestra Pintora Certificada", "Técnico en Pintura y Terminaciones", "Certificado en Pintura Decorativa", "Técnico en Revestimientos y Pintura Industrial"],
 };
 
+// Elimina las tildes para generar correos electrónicos.
 function quitarTildes(str){
   return str.normalize('NFD').replace(/[\u0300-\u036f]/g,'');
 }
 
-/* Generador determinístico de profesionales de ejemplo.
-   Reemplaza esta función por un fetch() a tu API real. */
+
+// Genera una lista de profesionales de prueba por especialidad.
 function generarProfesionales(cantidadPorCategoria = 40){
   const lista = [];
   let id = 1;
@@ -67,10 +64,12 @@ const emptyState = document.getElementById('emptyState');
 const resultCount = document.getElementById('resultCount');
 const searchInput = document.getElementById('searchInput');
 
+// Obtiene las iniciales del nombre del profesional.
 function iniciales(nombre){
   return nombre.split(' ').map(p=>p[0]).slice(0,2).join('').toUpperCase();
 }
 
+// Crea una tarjeta HTML con la información del profesional.
 function crearTarjeta(p){
   const total = p.likes + p.dislikes;
   const pct = total ? Math.round((p.likes/total)*100) : 0;
@@ -123,6 +122,7 @@ function crearTarjeta(p){
   return card;
 }
 
+// Genera y muestra las secciones de profesionales por especialidad.
 function renderSecciones(){
   container.innerHTML = '';
   especialidades.forEach(esp=>{
@@ -150,6 +150,7 @@ function renderSecciones(){
   aplicarFiltro('');
 }
 
+// Filtra las tarjetas según el texto ingresado en el buscador.
 function aplicarFiltro(texto){
   const t = texto.trim().toLowerCase();
   let totalVisible = 0;
@@ -168,15 +169,16 @@ function aplicarFiltro(texto){
   resultCount.textContent = t ? `${totalVisible} resultado${totalVisible!==1?'s':''}` : '';
 }
 
+// Eventos del buscador.
 searchInput.addEventListener('input', e => aplicarFiltro(e.target.value));
 document.getElementById('searchBtn').addEventListener('click', () => aplicarFiltro(searchInput.value));
 searchInput.addEventListener('keydown', e => { if(e.key === 'Enter') aplicarFiltro(searchInput.value); });
 
-/* ============================================
-   MODAL DE CONTACTO
-============================================ */
+
+// Gestión del modal de contacto.
 const modalOverlay = document.getElementById('contactModal');
 
+// Abre el modal y carga los datos del profesional seleccionado.
 function abrirModal(p, esp){
   document.getElementById('modalAvatar').textContent = iniciales(p.nombre);
   document.getElementById('modalAvatar').style.background = esp.color;
@@ -195,8 +197,14 @@ function abrirModal(p, esp){
   modalOverlay.classList.add('open');
 }
 
+// Cierra el modal al hacer clic en el botón de cierre.
 document.getElementById('closeModal').addEventListener('click', ()=> modalOverlay.classList.remove('open'));
+
+// Cierra el modal al hacer clic fuera del contenido.
 modalOverlay.addEventListener('click', e=>{ if(e.target === modalOverlay) modalOverlay.classList.remove('open'); });
+
+// Cierra el modal al presionar la tecla Escape.
 document.addEventListener('keydown', e=>{ if(e.key === 'Escape') modalOverlay.classList.remove('open'); });
 
+// Inicializa la visualización de las secciones.
 renderSecciones();
