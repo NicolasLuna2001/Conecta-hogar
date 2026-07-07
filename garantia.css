@@ -23,72 +23,143 @@ a {
 /* ==========================================
    2. BARRA DE NAVEGACIÓN (NAVBAR)
    ========================================== */
-.navbar {
+.navbar-container {
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 20px 40px 10px 40px;
+    background-color: transparent; /* Permite que se vea el fondo detrás */
+}
+
+/* La cápsula flotante con el fondo crema de tu Figma */
+.navbar-floating {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fcebe1; /* Color almendrado/crema suave de la foto */
+    border-radius: 50px; /* Bordes ultra redondeados en forma de píldora */
+    padding: 10px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
-    background-color: #ffffff;
-    border-bottom: 1px solid #f0f0f0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
-.navbar .logo {
-    font-weight: 700;
-    font-size: 18px;
-    color: #0f3443;
+/* --- LOGO INTERACTIVO --- */
+.logo-wrapper {
+    perspective: 1000px; /* Habilita el efecto 3D */
     display: flex;
     align-items: center;
-    gap: 8px;
+    /* Creamos la línea usando el borde derecho del contenedor del logo */
+    border-right: 3px solid rgb(246, 7, 23); 
+    /* Espacio antes de la línea (derecha) y ajuste a la izquierda */
+    padding-right: 20px; 
+    margin-right: 20px;
+    /* Altura de la línea basada en el contenedor */
+    height: 40px;
 }
 
-.navbar .logo-icon {
-    font-size: 20px;
-}
-
-.navbar .nav-links {
-    display: flex;
-    gap: 25px;
-}
-
-.navbar .nav-links a {
-    color: #4a5568;
-    font-weight: 500;
-    font-size: 14px;
-    transition: color 0.2s ease;
-}
-
-.navbar .nav-links a:hover {
-    color: #e52d27; /* Pequeño efecto hover */
-}
-
-.navbar .nav-actions {
+.logo-link {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
-.navbar .btn-login {
-    color: #4a5568;
-    font-weight: 500;
+.logo-img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: bottom center; /* El eje de rotación será la base */
+}
+
+/* Animación del logo al pasar el mouse (Efecto balanceo interactivo) */
+.logo-link:hover .logo-img {
+    transform: rotateX(15deg) rotateY(-10deg) scale(1.1);
+    filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15));
+}
+
+.logo-text {
     font-size: 14px;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
 }
 
-.navbar .btn-primary-sm {
-    background-color: #e52d27; /* El color rojo/fucsia del botón */
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 25px;
+.logo-text small {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+}
+
+/* --- ENLACES DE NAVEGACIÓN --- */
+.navbar-floating .nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.navbar-floating .nav-links a {
+    color: #1e293b; /* Color azul oscuro de los textos en tu Figma */
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Línea animada debajo de los enlaces al hacer hover */
+.navbar-floating .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #e52d27;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-floating .nav-links a:hover {
+    color: #e52d27;
+}
+
+.navbar-floating .nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* --- BOTÓN SOLICITAR SERVICIO --- */
+.btn-solicitar {
+    background-color: #e52d27; /* Rojo/Naranja de tu botón */
+    color: #ffffff !important;
+    padding: 12px 28px;
+    border-radius: 30px; /* Botón redondo igual a la foto */
     font-weight: 600;
     font-size: 14px;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(229, 45, 39, 0.2);
 }
 
-.navbar .btn-primary-sm:hover {
+.btn-solicitar:hover {
     background-color: #d11b17;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(229, 45, 39, 0.3);
+}
+
+/* --- AJUSTE PARA MÓVILES --- */
+@media (max-width: 768px) {
+    .navbar-container {
+        padding: 10px 15px;
+    }
+    .navbar-floating {
+        padding: 8px 20px;
+    }
+    .navbar-floating .nav-links {
+        display: none; /* Oculta el menú en móviles */
+    }
 }
 
 /* ==========================================
@@ -97,10 +168,11 @@ a {
 .hero-section {
     /* Replicamos el llamativo degradado de Rojo -> Naranja -> Amarillo */
     background: linear-gradient(135deg, #f857a6 0%, #ff5858 30%, #ff9900 70%, #f4d03f 100%);
-    padding: 80px 20px 140px 20px; /* Espaciado extra abajo para que floten las tarjetas */
+    padding: 160px 20px 100px 20px; 
     text-align: center;
-    color: #fcfaf8;
+    color: #ffffff;
     position: relative;
+    width: 100%;
 }
 
 .hero-container {
@@ -142,22 +214,25 @@ a {
 
 /* Botón Blanco Solicitud */
 .hero-section .btn-white {
-    background-color: #ffffff;
-    color: #e52d27;
+    background-color: #ffffff; /* Volvemos al fondo blanco limpio de Figma */
+    color: #e52d27;            /* Texto en color rojo/naranja corporativo */
     padding: 14px 28px;
     border-radius: 30px;
     font-weight: 600;
     font-size: 14px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    
+    /* SOLUCIÓN: Este margen empuja las estadísticas hacia abajo para que no tapen el botón */
+    margin-bottom: 70px; 
 }
 
 .hero-section .btn-white:hover {
+    background-color: #f8f9fa; /* Sutil cambio de blanco a gris claro al pasar el mouse */
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
-
 /* ==========================================
    4. TARJETAS DE ESTADÍSTICAS (Flotantes)
    ========================================== */
@@ -170,7 +245,7 @@ a {
     position: absolute;
     left: 20px;
     right: 20px;
-    bottom: -60px; /* Hace que floten hacia afuera del contenedor del Hero */
+    bottom: 30px; /* Hace que floten hacia afuera del contenedor del Hero */
     z-index: 10;
 }
 
@@ -188,14 +263,14 @@ a {
 .stat-card h3 {
     font-size: 28px;
     font-weight: 800;
-    color: #16a0ca;
+    color: #fbfcfc;
     margin-bottom: 5px;
 }
 
 .stat-card p {
     font-size: 12px;
     font-weight: 600;
-    color: rgba(15, 153, 233, 0.9);
+    color: rgba(250, 251, 252, 0.9);
 }
 
 /* ==========================================
