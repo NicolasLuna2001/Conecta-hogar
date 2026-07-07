@@ -1,0 +1,517 @@
+/* ==========================================
+   1. CONFIGURACIÓN BASE & VARIABLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #0f3443; /* Tono azul oscuro para buena lectura */
+    background-color: #ffffff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-align: none;
+    text-decoration: none;
+}
+
+/* ==========================================
+   2. BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-weight: 700;
+    font-size: 18px;
+    color: #0f3443;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar .logo-icon {
+    font-size: 20px;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar .nav-links a {
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #e52d27; /* Pequeño efecto hover */
+}
+
+.navbar .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar .btn-login {
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.navbar .btn-primary-sm {
+    background-color: #e52d27; /* El color rojo/fucsia del botón */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar .btn-primary-sm:hover {
+    background-color: #d11b17;
+    transform: translateY(-1px);
+}
+
+/* ==========================================
+   3. SECCIÓN HERO (Fondo Degradado y Textos)
+   ========================================== */
+.hero-section {
+    /* Replicamos el llamativo degradado de Rojo -> Naranja -> Amarillo */
+    background: linear-gradient(135deg, #f857a6 0%, #ff5858 30%, #ff9900 70%, #f4d03f 100%);
+    padding: 80px 20px 140px 20px; /* Espaciado extra abajo para que floten las tarjetas */
+    text-align: center;
+    color: #fcfaf8;
+    position: relative;
+}
+
+.hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Icono del Escudo Blanco Central */
+.hero-section .shield-icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hero-section h1 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.hero-section .hero-subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    opacity: 0.95;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botón Blanco Solicitud */
+.hero-section .btn-white {
+    background-color: #ffffff;
+    color: #e52d27;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-section .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   4. TARJETAS DE ESTADÍSTICAS (Flotantes)
+   ========================================== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: -60px; /* Hace que floten hacia afuera del contenedor del Hero */
+    z-index: 10;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 20px 10px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #16a0ca;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(15, 153, 233, 0.9);
+}
+
+/* ==========================================
+   5. SECCIÓN 6 COMPROMISOS (Base)
+   ========================================== */
+.commitments-section {
+    padding: 140px 40px 80px 40px; /* Bastante espacio arriba por el choque de las estadísticas */
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.section-tagline {
+    font-size: 11px;
+    font-weight: 700;
+    color: #e52d27;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.commitments-section h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0d2b3e;
+    margin-bottom: 40px;
+}
+
+/* Cuadrícula de Compromisos (2 columnas en pantallas grandes) */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   6. ESTILOS DE TARJETAS INDIVIDUALES (Compromisos)
+   ========================================== */
+.commitment-card {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    gap: 20px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.commitment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Contenedores circulares para los íconos */
+.card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    flex-shrink: 0; /* Evita que el círculo se deforme si hay mucho texto */
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-content h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0d2b3e;
+}
+
+.card-content p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #5c6f84;
+}
+
+/* Pequeñas etiquetas inferiores (Badges) */
+.badge {
+    align-self: flex-start; /* Se ajusta solo al tamaño de su texto */
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+/* ==========================================
+   7. VARIACIONES DE COLORES (Bordes, Iconos y Badges)
+   ========================================== */
+
+/* Variación Rosa/Fucsia */
+.border-pink { border-top: 4px solid #f857a6; }
+.bg-pink { background-color: #fff0f5; color: #f857a6; }
+.badge-pink { background-color: #fff0f5; color: #f857a6; }
+
+/* Variación Azul */
+.border-blue { border-top: 4px solid #00c6ff; }
+.bg-blue { background-color: #e6f7ff; color: #007bb5; }
+.badge-blue { background-color: #e6f7ff; color: #007bb5; }
+
+/* Variación Amarilla/Naranja */
+.border-yellow { border-top: 4px solid #f4d03f; }
+.bg-yellow { background-color: #fef9e7; color: #b7950b; }
+.badge-yellow { background-color: #fef9e7; color: #b7950b; }
+
+/* ==========================================
+   8. SECCIÓN PROCESO (Así protegemos cada servicio)
+   ========================================== */
+.process-section {
+    padding: 80px 40px;
+    background-color: #fcfdfe; /* Un fondo sutilmente grisáceo/azul para contrastar */
+    text-align: center;
+}
+
+.section-tagline-blue {
+    font-size: 11px;
+    font-weight: 700;
+    color: #00c6ff;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.process-section h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0d2b3e;
+    margin-bottom: 50px;
+}
+
+/* Cuadrícula del proceso (4 columnas para los 4 pasos) */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.process-step {
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 12px;
+    padding: 25px 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.01);
+}
+
+/* Números de los pasos */
+.step-number {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* Colores específicos para los números de los pasos según la imagen */
+.bg-step-pink { background-color: #e52d27; }
+.bg-step-blue { background-color: #00c6ff; }
+.bg-step-yellow { background-color: #f4d03f; }
+.bg-step-pink2 { background-color: #e52d27; }
+
+.step-text h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0d2b3e;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.step-text p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #5c6f84;
+}
+
+/* ==========================================
+   9. SECCIÓN CTA FINAL (¿Listo para empezar...?)
+   ========================================== */
+.cta-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-section .star-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.cta-section h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0d2b3e;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+.cta-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #5c6f84;
+    margin-bottom: 35px;
+}
+
+/* Contenedor de botones inferiores */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-primary-lg {
+    background-color: #e52d27;
+    color: #ffffff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary-lg:hover {
+    background-color: #d11b17;
+    transform: translateY(-2px);
+}
+
+.btn-secondary-lg {
+    background-color: #ffffff;
+    color: #00c6ff;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid #00c6ff;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-secondary-lg:hover {
+    background-color: #f4fcff;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   10. OPTIMIZACIÓN RESPONSIVA (Mobile & Tablets)
+   ========================================== */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        position: relative;
+        bottom: 0;
+        margin-top: 40px;
+    }
+    
+    .commitments-section {
+        padding-top: 60px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .navbar .nav-links {
+        display: none; /* Esconde el menú de escritorio en móviles */
+    }
+
+    .hero-section h1 {
+        font-size: 32px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .commitment-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
