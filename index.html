@@ -1,11 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Está es la página de inicio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conecta Hogar</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-    
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header">
+    <nav class="navbar">
+      <img src="img/logo.png" alt="Logo Conecta Hogar" class="logo" />
+
+      <ul class="nav-menu">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#como-funciona">Cómo funciona</a></li>
+        <li><a href="#profesionales">Profesionales</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav-buttons">
+        <a href="#" class="login">Ingresar</a>
+        <a href="#" class="btn-primary">Solicitar servicio</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero">
+      <img src="img/logo-grande.png" alt="Conecta Hogar" class="hero-logo" />
+
+      <div class="user-type">
+        <button>Soy cliente</button>
+        <button>Soy profesional</button>
+      </div>
+
+      <h1>Encuentra al profesional perfecto para tu hogar</h1>
+
+      <p>
+        Gasfiteros, electricistas, albañiles y más. Profesionales verificados,
+        precios transparentes y garantía de satisfacción.
+      </p>
+
+      <div class="search-box">
+        <input type="text" placeholder="¿Qué servicio necesitas?" />
+        <button>Buscar</button>
+      </div>
+
+      <div class="stats">
+        <div>
+          <h3>+2.400</h3>
+          <p>Profesionales</p>
+        </div>
+        <div>
+          <h3>+18.000</h3>
+          <p>Servicios completados</p>
+        </div>
+        <div>
+          <h3>98%</h3>
+          <p>Clientes satisfechos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFICIOS -->
+    <section class="oficios" id="servicios">
+      <span>En acción</span>
+      <h2>Nuestros oficios</h2>
+
+      <div class="cards-oficios">
+        <article class="oficio-card">
+          <img src="img/gasfiteria.jpg" alt="Gasfitería" />
+          <h3>Gasfitería</h3>
+          <p>Mantención de calefont</p>
+        </article>
+
+        <article class="oficio-card">
+          <img src="img/electricidad.jpg" alt="Electricidad" />
+          <h3>Electricidad</h3>
+          <p>Poner enchufe</p>
+        </article>
+
+        <article class="oficio-card">
+          <img src="img/albanileria.jpg" alt="Albañilería" />
+          <h3>Albañilería</h3>
+          <p>Enyesar</p>
+        </article>
+
+        <article class="oficio-card">
+          <img src="img/soldadura.jpg" alt="Soldadura" />
+          <h3>Soldadura</h3>
+          <p>Poner una chapa</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="servicios">
+      <span>Servicios</span>
+      <h2>¿Qué necesitas hoy?</h2>
+
+      <div class="service-options">
+        <article>Gasfitería</article>
+        <article>Electricidad</article>
+        <article>Albañilería</article>
+        <article>Soldadura</article>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="como-funciona" id="como-funciona">
+      <span>Simple y rápido</span>
+      <h2>Cómo funciona Conecta Hogar</h2>
+
+      <div class="steps">
+        <article>
+          <span>01</span>
+          <h3>Busca un profesional acorde a tu necesidad</h3>
+          <p>Explora nuestra red de profesionales verificados por especialidad y zona.</p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>Contáctalo</h3>
+          <p>Escríbele directamente, pide un presupuesto y coordina el trabajo.</p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>¡Listo! Tu hogar está conectado</h3>
+          <p>El profesional llega y resuelve el problema.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROFESIONALES -->
+    <section class="profesionales" id="profesionales">
+      <span>Nuestros expertos</span>
+      <h2>Profesionales destacados</h2>
+
+      <div class="professional-cards">
+        <article>
+          <img src="img/profesional1.jpg" alt="Carlos Muñoz" />
+          <h3>Carlos Muñoz</h3>
+          <p>Gasfitero certificado</p>
+          <button>Contactar</button>
+        </article>
+
+        <article>
+          <img src="img/profesional2.jpg" alt="Ana Rodríguez" />
+          <h3>Ana Rodríguez</h3>
+          <p>Electricista</p>
+          <button>Contactar</button>
+        </article>
+
+        <article>
+          <img src="img/profesional3.jpg" alt="Pedro Saavedra" />
+          <h3>Pedro Saavedra</h3>
+          <p>Pintor profesional</p>
+          <button>Contactar</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="testimonios">
+      <span>Testimonios</span>
+      <h2>Lo que dicen nuestros usuarios</h2>
+
+      <div class="reviews">
+        <article>
+          <p>“Increíble servicio. En menos de 2 horas tenía a Carlos arreglando mi cañería.”</p>
+          <h4>Valentina Torres</h4>
+        </article>
+
+        <article>
+          <p>“La electricista Ana fue puntual, profesional y dejó todo perfecto.”</p>
+          <h4>Diego Fuentes</h4>
+        </article>
+
+        <article>
+          <p>“Repararon mi calefacción justo antes del invierno.”</p>
+          <h4>Camila Herrera</h4>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta">
+      <span>¿Eres profesional?</span>
+      <h2>Haz crecer tu negocio con Conecta Hogar</h2>
+      <p>Únete a nuestra plataforma y comienza a recibir solicitudes verificadas.</p>
+
+      <div>
+        <button>Registrarme gratis</button>
+        <button>Ver nuestra garantía</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contacto">
+    <div>
+      <img src="img/logo.png" alt="Conecta Hogar" />
+      <p>Conectamos hogares con los mejores profesionales de Chile.</p>
+    </div>
+
+    <div>
+      <h4>Servicios</h4>
+      <a href="#">Gasfitería</a>
+      <a href="#">Electricidad</a>
+      <a href="#">Albañilería</a>
+      <a href="#">Soldadura</a>
+    </div>
+
+    <div>
+      <h4>Empresa</h4>
+      <a href="#">Sobre nosotros</a>
+      <a href="#">Garantía</a>
+      <a href="#">Trabaja con nosotros</a>
+    </div>
+
+    <div>
+      <h4>Soporte</h4>
+      <a href="#">Ayuda</a>
+      <a href="#">Contacto</a>
+      <a href="#">Términos</a>
+    </div>
+  </footer>
+
+  <script src="index.js"></script>
 </body>
 </html>
