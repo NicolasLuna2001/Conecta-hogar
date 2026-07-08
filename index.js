@@ -215,4 +215,40 @@ contactar.forEach(boton=>{
 
     });
 
+
+       // ==========================================
+   // 3. EFECTO DINÁMICO EN EL NAVBAR AL HACER SCROLL//
+    // ==========================================
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+            navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
+            navbar.style.padding = '10px 40px'; // Se vuelve sutilmente más delgada
+            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(8px)';
+        } else {
+            navbar.style.boxShadow = 'none';
+            navbar.style.padding = '15px 40px';
+            navbar.style.background = '#ffffff';
+            navbar.style.backdropFilter = 'none';
+        }
+    });
+
+    // ===============================
+// Profesionales Destacados
+// ===============================
+ 
+const profileButtons = document.querySelectorAll(".btn-profile");
+ 
+document.querySelectorAll('.prof-btn-contratar').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const nombre = btn.dataset.nombre || 'este profesional';
+    // TODO: reemplazar este alert por su lógica real
+    // (ej: abrir modal de contacto, o redirigir a /contratar?pro=...)
+    alert(`Pronto podrás contratar a ${nombre} 🙌`);
+  });
 });
+
+});
+

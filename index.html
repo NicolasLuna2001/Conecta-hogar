@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conecta Hogar</title>
   <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
 
   <!-- HEADER / NAVBAR -->
-  <header class="header">
-    <nav class="navbar">
-      <img src="logoCH-removebg-preview.png" alt="Logo Conecta Hogar" class="logo" />
-
-      <ul class="nav-menu">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#como-funciona">Cómo funciona</a></li>
-        <li><a href="#profesionales">Profesionales</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-
-      <div class="nav-buttons">
-        <a href="#" class="login">Ingresar</a>
-        <a href="#" class="btn-primary">Solicitar servicio</a>
+  <header class="navbar-container">
+    <div class="navbar-floating">
+      <div class="logo-wrapper">
+        <a href="#" class="logo-link">
+          <img src="logo.jpeg.png" alt="Conecta Hogar Logo" class="logo-img">
+        </a>
       </div>
-    </nav>
+
+      <nav class="nav-links">
+        <a href="nosotros.html">Nosotros</a>
+        <a href="profesionales.html">Profesionales</a>
+        <a href="#">Contacto</a>
+        <a href="garantia.html">Garantía</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="registro.html" class="btn-solicitar">Registrarse</a>
+      </div>
+    </div>
   </header>
+
 
   <!-- HERO -->
   <main>
@@ -77,7 +83,7 @@
         </article>
 
         <article class="oficio-card">
-          <img src="electrico.png" alt="Electricidad" />
+          <img src="electricista.png" alt="Electricidad" />
           <h3>Electricidad</h3>
         </article>
 
@@ -122,33 +128,116 @@
     </section>
 
     <!-- PROFESIONALES -->
-    <section class="profesionales" id="profesionales">
-      <span>Nuestros expertos</span>
-      <h2>Profesionales destacados</h2>
+    <!-- ===== PROFESIONALES DESTACADOS ===== -->
+   <section class="destacados">
+  <div class="destacados-inner">
 
-      <div class="professional-cards">
-        <article>
-          <img src="img/profesional1.jpg" alt="Carlos Muñoz" />
-          <h3>Carlos Muñoz</h3>
-          <p>Gasfitero certificado</p>
-          <button>Contactar</button>
-        </article>
-
-        <article>
-          <img src="img/profesional2.jpg" alt="Ana Rodríguez" />
-          <h3>Ana Rodríguez</h3>
-          <p>Electricista</p>
-          <button>Contactar</button>
-        </article>
-
-        <article>
-          <img src="img/profesional3.jpg" alt="Pedro Saavedra" />
-          <h3>Pedro Saavedra</h3>
-          <p>Pintor profesional</p>
-          <button>Contactar</button>
-        </article>
+    <div class="destacados-head">
+      <div>
+        <span class="destacados-eyebrow">Nuestros expertos</span>
+        <h2 class="destacados-title">Profesionales destacados</h2>
       </div>
-    </section>
+      <a href="profesionales.html" class="destacados-vertodos">Ver todos <span aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="destacados-grid">
+
+      <!-- Tarjeta 1 -->
+      <article class="prof-card">
+        <div class="prof-card-header">
+          <div class="prof-avatar-wrap">
+            <div class="prof-avatar" style="background:#55BCD9;">CM</div>
+            <span class="prof-status-dot"></span>
+          </div>
+          <div>
+            <h3 class="prof-name">Carlos Muñoz</h3>
+            <span class="prof-badge top">Top Profesional</span>
+            <p class="prof-specialty">Gasfitero certificado</p>
+          </div>
+        </div>
+
+        <div class="prof-rating">
+          <svg class="prof-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <strong>4.9</strong> <span>(127 reseñas)</span>
+        </div>
+
+        <div class="prof-meta">
+         
+        </div>
+
+        <div class="prof-actions">
+          <button type="button" class="prof-btn-contratar" data-nombre="Carlos Muñoz">Contratar</button>
+          <a class="prof-btn-llamar" href="tel:56912345678" aria-label="Llamar a Carlos Muñoz">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 2 -->
+      <article class="prof-card">
+        <div class="prof-card-header">
+          <div class="prof-avatar-wrap">
+            <div class="prof-avatar" style="background:#E83360;">AR</div>
+            <span class="prof-status-dot"></span>
+          </div>
+          <div>
+            <h3 class="prof-name">Ana Rodríguez</h3>
+            <span class="prof-badge verificada">Verificada</span>
+            <p class="prof-specialty">Electricista</p>
+          </div>
+        </div>
+
+        <div class="prof-rating">
+          <svg class="prof-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <strong>4.8</strong> <span>(89 reseñas)</span>
+        </div>
+
+        <div class="prof-meta">
+
+        </div>
+
+        <div class="prof-actions">
+          <button type="button" class="prof-btn-contratar" data-nombre="Ana Rodríguez">Contratar</button>
+          <a class="prof-btn-llamar" href="tel:56911112222" aria-label="Llamar a Ana Rodríguez">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Tarjeta 3 -->
+      <article class="prof-card">
+        <div class="prof-card-header">
+          <div class="prof-avatar-wrap">
+            <div class="prof-avatar" style="background:#F8DD1A; color:#0B1224;">PS</div>
+            <span class="prof-status-dot"></span>
+          </div>
+          <div>
+            <h3 class="prof-name">Pedro Saavedra</h3>
+            <span class="prof-badge destacado">Destacado</span>
+            <p class="prof-specialty">Pintor profesional</p>
+          </div>
+        </div>
+
+        <div class="prof-rating">
+          <svg class="prof-star" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+          <strong>4.7</strong> <span>(64 reseñas)</span>
+        </div>
+
+        <div class="prof-meta">
+          
+        </div>
+
+        <div class="prof-actions">
+          <button type="button" class="prof-btn-contratar" data-nombre="Pedro Saavedra">Contratar</button>
+          <a class="prof-btn-llamar" href="tel:56933334444" aria-label="Llamar a Pedro Saavedra">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
 
     <!-- TESTIMONIOS -->
     <section class="testimonios">
@@ -189,7 +278,7 @@
   <!-- FOOTER -->
   <footer class="footer" id="contacto">
     <div>
-      <img src="img/logo.png" alt="Conecta Hogar" />
+      <img src="logo.png" alt="Conecta Hogar" />
       <p>Conectamos hogares con los mejores profesionales de Chile.</p>
     </div>
 
@@ -218,4 +307,5 @@
 
   <script src="index.js"></script>
 </body>
+
 </html>
