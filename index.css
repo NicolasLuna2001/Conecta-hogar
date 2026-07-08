@@ -87,6 +87,9 @@ body {
   width: 230px;
   margin: 30px auto;
   display: block;
+  transform:rotateX(15deg) rotateY(-10deg) scale(1.1);
+  filter:drop-shadow(0 6px 8px rgba(0,0,0,.15));
+  
 }
 
 .user-type {
